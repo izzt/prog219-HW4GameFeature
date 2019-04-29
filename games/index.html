@@ -53,6 +53,7 @@ var config = {
         //in preload, load the assets as audio
         this.load.audio('bombaudio', 'assets/bombAudio.mp3');
         this.load.audio('staraudio', 'assets/starAudio.mp3');
+        this.load.audio('jump', 'assets/jump.mp3');
 
         this.load.spritesheet('dude', 
         'assets/dude.png',
@@ -163,6 +164,8 @@ var config = {
         if (cursors.up.isDown && player.body.touching.down)
         {
             player.setVelocityY(-330);
+            let sound =this.sound.add("jump");
+            sound.play();
         }
     }
 
